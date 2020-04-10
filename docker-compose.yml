@@ -1,0 +1,15 @@
+version: '3'
+services:
+  grav:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8082:80"     # The HTTP port
+    #      - "8080:8080" # The Web UI (enabled by --api)
+    volumes:
+      - grav_data:/var/www/html
+    restart: always
+
+volumes:
+  grav_data:
